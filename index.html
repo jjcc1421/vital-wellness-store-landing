@@ -4,6 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Renovix | Vital Wellness Store</title>
+
+  <!-- Google tag (gtag.js) — GA4 -->
+  <!-- MEASUREMENT_ID: replace G-XXXXXXXXXX with your GA4 Measurement ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      page_title: document.title,
+      page_location: window.location.href
+    });
+  </script>
   <meta name="description" content="Renovix — Suplemento alimentario con resveratrol, quinua y vitaminas esenciales. Protección antioxidante para tu bienestar. Disponible en vitalwstore.com" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -242,6 +255,19 @@
         if (target) {
           e.preventDefault();
           target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // GA4 conversion tracking: WhatsApp clicks
+    document.querySelectorAll('a[href*="wa.me"]').forEach(function(el) {
+      el.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+          gtag('event', 'whatsapp_click', {
+            event_category: 'conversion',
+            event_label: 'whatsapp_contact',
+            value: 1
+          });
         }
       });
     });
