@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Keep order/account-state routes out of crawl scope if they are introduced later.
+Disallow: /cart
+Disallow: /checkout
+Disallow: /account
+Disallow: /search
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://vitalwstore.com/sitemap.xml
