@@ -10,6 +10,7 @@
 - `assets/tracking.js`
 - `assets/store.css`
 - `assets/bioconex.webp`
+- `assets/renovix.webp`
 - `sitemap.xml`
 
 `robots.txt` is unchanged and retains its sitemap directive.
